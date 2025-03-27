@@ -18,14 +18,15 @@ function App() {
       <p>
         <a href="https://booking-seven-chi.vercel.app">Booking 프로젝트</a>
       </p>
-      <p>
-        <a href="https://work-connect-plum.vercel.app">워크커넥트 프로젝트</a>
-      </p>
+
       <p>
         <a href="https://bloodfolio.vercel.app">블러드폴리오 프로젝트</a>
       </p>
 
       <h2>Next.js</h2>
+      <p>
+        <a href="https://work-connect-plum.vercel.app">워크커넥트 프로젝트</a>
+      </p>
       <p>
         <a href="https://next13-project-mu.vercel.app/">자산관리 프로젝트</a>
       </p>

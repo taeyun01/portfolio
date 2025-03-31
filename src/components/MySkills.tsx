@@ -7,12 +7,14 @@ const MySkills = () => {
   return (
     <MySkillsContainerStyle id="my-skills">
       <Flex direction="column" align="center" gap={14}>
-        <Text bold>My Skills</Text>
+        <Text bold color="white">
+          My Skills
+        </Text>
         <Flex justify="center" gap={14} wrap="wrap" css={{ width: "100%" }}>
           {Skills.map((skill) => (
             <Flex key={skill.name} direction="column" align="center" gap={14}>
               <img src={skill.icon} alt={skill.name} width={80} height={50} />
-              <Text typography="t7" bold>
+              <Text typography="t7" bold color="gray800">
                 {skill.name}
               </Text>
             </Flex>

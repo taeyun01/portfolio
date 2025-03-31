@@ -19,7 +19,7 @@ const MyProfile = () => {
                 subTitleCenter
                 title={
                   <Flex direction="column" align="center" gap={14}>
-                    <Text>My Profile</Text>
+                    <Text color="white">My Profile</Text>
                     <ProfileImage
                       src="https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg"
                       alt="profile"

@@ -9,7 +9,9 @@ const MyProjects = () => {
   return (
     <MyProjectsContainerStyle id="my-projects">
       <Flex direction="column" align="center" gap={14}>
-        <Text bold>My Projects</Text>
+        <Text bold color="white">
+          My Projects
+        </Text>
         <Flex
           as="ul"
           justify="center"
@@ -32,9 +34,7 @@ const MyProjects = () => {
                   width={270}
                   css={projectItemStyle}
                 />
-                <Text typography="t6" bold>
-                  {project.title}
-                </Text>
+
                 <Flex gap={10}>
                   {project.badge.map((badge) => (
                     <Badge
@@ -44,6 +44,9 @@ const MyProjects = () => {
                     />
                   ))}
                 </Flex>
+                <Text typography="t6" bold color="gray800">
+                  {project.title}
+                </Text>
               </Flex>
             </a>
           ))}

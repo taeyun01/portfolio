@@ -1,10 +1,12 @@
 import Flex from "@components/shared/Flex";
 import ListRow from "@components/shared/ListRow";
 import Text from "@components/shared/Text";
+import styled from "@emotion/styled";
+import { colors } from "@src/styles/colorPalette";
 
 const AboutMe = () => {
   return (
-    <section>
+    <AboutMeContainerStyle id="about-me">
       <Flex direction="column" align="center">
         <ListRow
           contents={
@@ -23,8 +25,13 @@ const AboutMe = () => {
           }
         />
       </Flex>
-    </section>
+    </AboutMeContainerStyle>
   );
 };
+
+const AboutMeContainerStyle = styled.section`
+  background-color: ${colors.blue300};
+  padding: 80px 0;
+`;
 
 export default AboutMe;

@@ -13,16 +13,16 @@ function App() {
       <Navbar />
 
       <MyProfile />
-      <Spacing size={8} marginVertical={20} backgroundColor="gray100" />
-
-      <AboutMe />
-      <Spacing size={8} marginVertical={20} backgroundColor="gray100" />
+      <Spacing size={8} backgroundColor="white" />
 
       <MySkills />
-      <Spacing size={8} marginVertical={20} backgroundColor="gray100" />
+      <Spacing size={8} backgroundColor="gray100" />
 
       <MyProjects />
-      <Spacing size={8} marginVertical={20} backgroundColor="gray100" />
+      <Spacing size={8} backgroundColor="gray100" />
+
+      <AboutMe />
+      <Spacing size={8} backgroundColor="gray100" />
 
       <Contact />
     </>

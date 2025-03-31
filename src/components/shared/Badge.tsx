@@ -4,11 +4,12 @@ import Text from "./Text";
 
 interface BadgeProps {
   label: string;
+  backgroundColor?: string;
 }
 
-const Badge = ({ label }: BadgeProps) => {
+const Badge = ({ label, backgroundColor = colors.black }: BadgeProps) => {
   return (
-    <Container>
+    <Container backgroundColor={backgroundColor}>
       <Text bold typography="t7" color="white">
         {label}
       </Text>
@@ -16,10 +17,10 @@ const Badge = ({ label }: BadgeProps) => {
   );
 };
 
-const Container = styled.div`
+const Container = styled.div<{ backgroundColor: string }>`
   padding: 2px 8px;
   border-radius: 12px;
-  background-color: ${colors.black};
+  background-color: ${({ backgroundColor }) => backgroundColor};
 `;
 
 export default Badge;

@@ -28,6 +28,9 @@ const MyProjects = () => {
                 as="li"
                 gap={14}
               >
+                <Text typography="t6" bold color="gray800">
+                  {project.title}
+                </Text>
                 <img
                   src={project.image}
                   alt={project.title}
@@ -38,15 +41,12 @@ const MyProjects = () => {
                 <Flex gap={10}>
                   {project.badge.map((badge) => (
                     <Badge
-                      key={badge}
-                      label={badge}
-                      backgroundColor={colors.blue980}
+                      key={badge.label}
+                      label={badge.label}
+                      backgroundColor={badge.backgroundColor}
                     />
                   ))}
                 </Flex>
-                <Text typography="t6" bold color="gray800">
-                  {project.title}
-                </Text>
               </Flex>
             </a>
           ))}
@@ -62,28 +62,84 @@ const projectList = [
     image:
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://booking-seven-chi.vercel.app",
-    badge: ["React", "TypeScript", "emotion"],
+    badge: [
+      { label: "React", backgroundColor: colors.blue500 },
+      {
+        label: "TypeScript",
+        backgroundColor: colors.blue980,
+      },
+      {
+        label: "emotion",
+        backgroundColor: colors.red,
+      },
+      {
+        label: "firebase",
+        backgroundColor: colors.orange,
+      },
+    ],
   },
   {
     title: "블러드폴리오",
     image:
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://bloodfolio.vercel.app",
-    badge: ["React", "TypeScript", "emotion"],
+    badge: [
+      { label: "React", backgroundColor: colors.blue500 },
+      {
+        label: "TypeScript",
+        backgroundColor: colors.blue980,
+      },
+      {
+        label: "emotion",
+        backgroundColor: colors.red,
+      },
+      {
+        label: "supabase",
+        backgroundColor: colors.teal,
+      },
+    ],
   },
   {
     title: "워크커넥트",
     image:
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://work-connect-plum.vercel.app",
-    badge: ["Next.js", "TypeScript", "emotion", "firebase"],
+    badge: [
+      { label: "Next.js", backgroundColor: colors.black },
+      {
+        label: "TypeScript",
+        backgroundColor: colors.blue980,
+      },
+      {
+        label: "emotion",
+        backgroundColor: colors.red,
+      },
+      {
+        label: "firebase",
+        backgroundColor: colors.orange,
+      },
+    ],
   },
   {
     title: "자산관리",
     image:
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://next13-project-mu.vercel.app/",
-    badge: ["Next.js", "TypeScript", "emotion", "firebase"],
+    badge: [
+      { label: "Next.js", backgroundColor: colors.black },
+      {
+        label: "TypeScript",
+        backgroundColor: colors.blue980,
+      },
+      {
+        label: "emotion",
+        backgroundColor: colors.red,
+      },
+      {
+        label: "firebase",
+        backgroundColor: colors.orange,
+      },
+    ],
   },
 ];
 

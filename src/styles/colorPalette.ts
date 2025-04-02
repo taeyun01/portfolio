@@ -23,6 +23,13 @@ export const colorPalette = css`
     --blue400: rgba(54, 143, 255, 0.4);
     --blue500: rgba(54, 143, 255, 0.5);
     --blue980: rgba(54, 143, 255, 0.98);
+    --orange: rgba(255, 159, 10, 1);
+    --orange100: rgba(255, 159, 10, 0.1);
+    --orange200: rgba(255, 159, 10, 0.2);
+    --orange300: rgba(255, 159, 10, 0.3);
+    --orange400: rgba(255, 159, 10, 0.4);
+    --orange500: rgba(255, 159, 10, 0.5);
+    --orange980: rgba(255, 159, 10, 0.98);
     --red: rgba(253, 46, 105, 1);
     --red100: rgba(253, 46, 105, 0.1);
     --red50: rgba(253, 46, 105, 0.05);
@@ -32,6 +39,7 @@ export const colorPalette = css`
     --white600: rgba(255, 255, 255, 0.6);
     --white900: rgba(255, 255, 255, 0.9);
     --black: rgba(34, 34, 34, 1);
+    --teal: rgba(10, 219, 143, 1);
     --teal900: rgba(10, 219, 143, 0.9);
   }
 `;
@@ -58,6 +66,13 @@ export const colors = {
   blue400: "var(--blue400)",
   blue500: "var(--blue500)",
   blue980: "var(--blue980)",
+  orange: "var(--orange)",
+  orange100: "var(--orange100)",
+  orange200: "var(--orange200)",
+  orange300: "var(--orange300)",
+  orange400: "var(--orange400)",
+  orange500: "var(--orange500)",
+  orange980: "var(--orange980)",
   red: "var(--red)",
   red50: "var(--red50)",
   red100: "var(--red100)",
@@ -67,6 +82,7 @@ export const colors = {
   white600: "var(--white600)",
   white900: "var(--white900)",
   black: "var(--black)",
+  teal: "var(--teal)",
   teal900: "var(--teal900)",
 };
 

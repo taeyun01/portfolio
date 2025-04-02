@@ -12,21 +12,20 @@ const MyProjects = () => {
         <Text bold color="white">
           My Projects
         </Text>
-        <Flex
-          as="ul"
-          justify="center"
-          gap={14}
-          wrap="wrap"
-          css={{ width: "100%" }}
-        >
+        <Flex as="ul" justify="center" gap={12} wrap="wrap">
           {projectList.map((project) => (
-            <a href={project.link}>
+            <a
+              key={project.title}
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+            >
               <Flex
-                key={project.title}
                 direction="column"
                 align="center"
                 as="li"
                 gap={14}
+                css={{ width: "300px" }}
               >
                 <Text typography="t6" bold color="gray800">
                   {project.title}
@@ -34,11 +33,16 @@ const MyProjects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  width={270}
+                  width="100%"
                   css={projectItemStyle}
                 />
 
-                <Flex gap={10}>
+                <Flex
+                  gap={8}
+                  wrap="wrap"
+                  justify="center"
+                  css={{ width: "100%" }}
+                >
                   {project.badge.map((badge) => (
                     <Badge
                       key={badge.label}
@@ -63,17 +67,17 @@ const projectList = [
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://booking-seven-chi.vercel.app",
     badge: [
-      { label: "React", backgroundColor: colors.blue500 },
+      { label: "React", backgroundColor: colors.react },
       {
         label: "TypeScript",
         backgroundColor: colors.blue980,
       },
       {
-        label: "emotion",
+        label: "Emotion",
         backgroundColor: colors.red,
       },
       {
-        label: "firebase",
+        label: "Firebase",
         backgroundColor: colors.orange,
       },
     ],
@@ -84,17 +88,17 @@ const projectList = [
       "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
     link: "https://bloodfolio.vercel.app",
     badge: [
-      { label: "React", backgroundColor: colors.blue500 },
+      { label: "React", backgroundColor: colors.react },
       {
         label: "TypeScript",
         backgroundColor: colors.blue980,
       },
       {
-        label: "emotion",
-        backgroundColor: colors.red,
+        label: "Tailwind CSS",
+        backgroundColor: colors.tailwind,
       },
       {
-        label: "supabase",
+        label: "Supabase",
         backgroundColor: colors.teal,
       },
     ],
@@ -111,11 +115,11 @@ const projectList = [
         backgroundColor: colors.blue980,
       },
       {
-        label: "emotion",
+        label: "Emotion",
         backgroundColor: colors.red,
       },
       {
-        label: "firebase",
+        label: "Firebase",
         backgroundColor: colors.orange,
       },
     ],
@@ -132,11 +136,11 @@ const projectList = [
         backgroundColor: colors.blue980,
       },
       {
-        label: "emotion",
+        label: "Emotion",
         backgroundColor: colors.red,
       },
       {
-        label: "firebase",
+        label: "Firebase",
         backgroundColor: colors.orange,
       },
     ],

@@ -4,6 +4,10 @@ import { colorPalette, colors } from "./colorPalette";
 export default css`
   ${colorPalette}
 
+  * {
+    box-sizing: border-box;
+  }
+
   body {
     // background-color: ${colors.gray300};
   }

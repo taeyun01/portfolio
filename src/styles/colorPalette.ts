@@ -41,6 +41,8 @@ export const colorPalette = css`
     --black: rgba(34, 34, 34, 1);
     --teal: rgba(10, 219, 143, 1);
     --teal900: rgba(10, 219, 143, 0.9);
+    --tailwind: rgba(0, 188, 255, 1);
+    --react: rgba(87, 196, 220, 1);
   }
 `;
 
@@ -84,6 +86,8 @@ export const colors = {
   black: "var(--black)",
   teal: "var(--teal)",
   teal900: "var(--teal900)",
+  tailwind: "var(--tailwind)",
+  react: "var(--react)",
 };
 
 export type Colors = keyof typeof colors;

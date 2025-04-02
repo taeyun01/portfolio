@@ -1,21 +1,65 @@
+import { useEffect, useState } from "react";
+
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Text from "@src/components/shared/Text";
 import { SCROLL_ID } from "@src/constants";
 import { colors } from "@src/styles/colorPalette";
 import scrollIntoView from "@src/utils/scrollIntoView";
+import HamburgerIcon from "@src/components/shared/Hamburger";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const [navHeight, setNavHeight] = useState(0);
+
+  const toggleMenu = () => {
+    setIsOpen((prev) => !prev);
+  };
+
+  useEffect(() => {
+    const getNavBarHeight = (): number => {
+      const navbar = document.querySelector("nav"); // navbar 요소 선택
+      const offset = navbar ? navbar.offsetHeight : 0; // navbar 높이 계산
+      return offset;
+    };
+    const navBarHeight = getNavBarHeight();
+    setNavHeight(navBarHeight - 1);
+  }, [navHeight]);
+
   return (
     <NavbarContainer id="navbar">
       <Text css={navTitleStyle} bold>
         TAEYUN
       </Text>
+
+      <HamburgerIconStyle>
+        <HamburgerIcon onClick={toggleMenu} />
+      </HamburgerIconStyle>
+
       <ul css={navItemWrapperStyle}>
         {NavbarItem.map((item) => (
           <li key={item.id}>
+            <Text
+              as="span"
+              typography="t6"
+              css={navItemListStyle}
+              onClick={() => scrollIntoView(item.id)}
+            >
+              {item.name}
+            </Text>
+          </li>
+        ))}
+      </ul>
+
+      <ul css={mobileMenuStyle(navHeight, isOpen)}>
+        {NavbarItem.map((item) => (
+          <li
+            key={item.id}
+            css={mobileNavItemStyle}
+            onClick={() => scrollIntoView(item.id)}
+          >
             <Text typography="t6" css={navItemListStyle}>
-              <a onClick={() => scrollIntoView(item.id)}>{item.name}</a>
+              {item.name}
             </Text>
           </li>
         ))}
@@ -23,6 +67,33 @@ const Navbar = () => {
     </NavbarContainer>
   );
 };
+
+const mobileNavStyle = css`
+  @media (min-width: 520px) {
+    display: none; // 모바일에서 햄버거 아이콘 보이도록
+  }
+`;
+
+const mobileNavItemStyle = css`
+  cursor: pointer;
+  padding: 8px 24px;
+  width: 100%;
+  &:hover {
+    background-color: ${colors.gray200};
+  }
+`;
+
+const mobileMenuStyle = (navHeight: number, isOpen: boolean) => css`
+  position: absolute;
+  top: ${navHeight}px;
+  left: 0;
+  width: 100%;
+  background-color: ${colors.blue};
+  display: flex;
+  flex-direction: column;
+  ${mobileNavStyle}
+  ${isOpen ? "display: block;" : "display: none;"}
+`;
 
 const NavbarItem = [
   {
@@ -51,7 +122,7 @@ const NavbarContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 24px;
+  padding: 16px 24px;
   background-color: ${colors.blue980};
   position: sticky;
   top: 0;
@@ -66,11 +137,23 @@ const navItemWrapperStyle = css`
   display: flex;
   list-style: none;
   gap: 25px;
+
+  @media (max-width: 520px) {
+    display: none;
+  }
 `;
 
 const navItemListStyle = css`
   color: ${colors.white};
   cursor: pointer;
+`;
+
+const HamburgerIconStyle = styled.div`
+  display: block;
+  cursor: pointer;
+  color: ${colors.white};
+
+  ${mobileNavStyle}
 `;
 
 export default Navbar;

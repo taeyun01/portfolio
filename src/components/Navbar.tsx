@@ -95,6 +95,44 @@ const mobileMenuStyle = (navHeight: number, isOpen: boolean) => css`
   ${isOpen ? "display: block;" : "display: none;"}
 `;
 
+const NavbarContainer = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  background-color: ${colors.blue980};
+  position: sticky;
+  top: 0;
+  z-index: 100;
+`;
+
+const navTitleStyle = css`
+  color: ${colors.white};
+`;
+
+const navItemWrapperStyle = css`
+  display: none;
+  list-style: none;
+  gap: 25px;
+
+  @media (min-width: 520px) {
+    display: flex;
+  }
+`;
+
+const navItemListStyle = css`
+  color: ${colors.white};
+  cursor: pointer;
+`;
+
+const HamburgerIconStyle = styled.div`
+  display: block;
+  cursor: pointer;
+  color: ${colors.white};
+
+  ${mobileNavStyle}
+`;
+
 const NavbarItem = [
   {
     id: SCROLL_ID.PROFILE,
@@ -117,43 +155,5 @@ const NavbarItem = [
     name: "Contact",
   },
 ];
-
-const NavbarContainer = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 24px;
-  background-color: ${colors.blue980};
-  position: sticky;
-  top: 0;
-  z-index: 100;
-`;
-
-const navTitleStyle = css`
-  color: ${colors.white};
-`;
-
-const navItemWrapperStyle = css`
-  display: flex;
-  list-style: none;
-  gap: 25px;
-
-  @media (max-width: 520px) {
-    display: none;
-  }
-`;
-
-const navItemListStyle = css`
-  color: ${colors.white};
-  cursor: pointer;
-`;
-
-const HamburgerIconStyle = styled.div`
-  display: block;
-  cursor: pointer;
-  color: ${colors.white};
-
-  ${mobileNavStyle}
-`;
 
 export default Navbar;

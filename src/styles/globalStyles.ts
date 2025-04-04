@@ -1,15 +1,12 @@
 import { css } from "@emotion/react";
-import { colorPalette, colors } from "./colorPalette";
+import { colorPalette } from "./colorPalette";
+
 // 전역 스타일 설정
 export default css`
   ${colorPalette}
 
   * {
     box-sizing: border-box;
-  }
-
-  body {
-    // background-color: ${colors.gray300};
   }
 
   :root {
@@ -155,5 +152,17 @@ export default css`
   a {
     color: inherit;
     text-decoration: inherit;
+  }
+
+  @font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  body {
+    font-family: "Pretendard-Regular";
   }
 `;

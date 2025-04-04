@@ -4,9 +4,13 @@ import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
 import { colors } from "@src/styles/colorPalette";
 
-const AboutMe = () => {
+const AboutMe = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   return (
-    <AboutMeContainerStyle id="about-me">
+    <AboutMeContainerStyle id="about-me" backgroundColor={backgroundColor}>
       <Flex direction="column" align="center">
         <ListRow
           contents={
@@ -29,8 +33,8 @@ const AboutMe = () => {
   );
 };
 
-const AboutMeContainerStyle = styled.section`
-  background-color: ${colors.blue300};
+const AboutMeContainerStyle = styled.section<{ backgroundColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
 `;
 

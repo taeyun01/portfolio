@@ -8,7 +8,11 @@ import { colors } from "@src/styles/colorPalette";
 import scrollIntoView from "@src/utils/scrollIntoView";
 import HamburgerIcon from "@src/components/shared/Hamburger";
 
-const Navbar = () => {
+const Navbar = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
   const [navHeight, setNavHeight] = useState(0);
 
@@ -27,7 +31,7 @@ const Navbar = () => {
   }, [navHeight]);
 
   return (
-    <NavbarContainer id="navbar">
+    <NavbarContainer id="navbar" backgroundColor={backgroundColor}>
       <Text css={navTitleStyle} bold>
         TAEYUN
       </Text>
@@ -95,12 +99,12 @@ const mobileMenuStyle = (navHeight: number, isOpen: boolean) => css`
   ${isOpen ? "display: block;" : "display: none;"}
 `;
 
-const NavbarContainer = styled.nav`
+const NavbarContainer = styled.nav<{ backgroundColor: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 16px 24px;
-  background-color: ${colors.blue980};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   position: sticky;
   top: 0;
   z-index: 100;

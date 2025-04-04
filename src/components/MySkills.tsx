@@ -3,9 +3,13 @@ import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
 import { colors } from "@src/styles/colorPalette";
 
-const MySkills = () => {
+const MySkills = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   return (
-    <MySkillsContainerStyle id="my-skills">
+    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
       <Flex direction="column" align="center" gap={14}>
         <Text bold color="white">
           My Skills
@@ -76,8 +80,8 @@ const Skills = [
   },
 ];
 
-const MySkillsContainerStyle = styled.section`
-  background-color: ${colors.blue300};
+const MySkillsContainerStyle = styled.section<{ backgroundColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
 `;
 

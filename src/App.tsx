@@ -6,25 +6,26 @@ import MyProjects from "@components/MyProjects";
 import MySkills from "@components/MySkills";
 import Navbar from "@components/Navbar";
 import Spacing from "@components/shared/Spacing";
+import { colors } from "@src/styles/colorPalette";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Navbar backgroundColor={colors.black} />
 
-      <MyProfile />
+      <MyProfile backgroundColor={colors.black} />
       <Spacing size={8} backgroundColor="white" />
 
-      <MySkills />
-      <Spacing size={8} backgroundColor="gray100" />
+      <MySkills backgroundColor={colors.black} />
+      <Spacing size={8} backgroundColor="white" />
 
-      <MyProjects />
-      <Spacing size={8} backgroundColor="gray100" />
+      <MyProjects backgroundColor={colors.black} />
+      <Spacing size={8} backgroundColor="white" />
 
-      <AboutMe />
-      <Spacing size={8} backgroundColor="gray100" />
+      <AboutMe backgroundColor={colors.black} />
+      <Spacing size={8} backgroundColor="white" />
 
-      <Contact />
+      <Contact backgroundColor={colors.black} />
     </>
   );
 }

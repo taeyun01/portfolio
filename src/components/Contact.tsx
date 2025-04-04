@@ -4,9 +4,13 @@ import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
 import { colors } from "@src/styles/colorPalette";
 
-const Contact = () => {
+const Contact = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   return (
-    <ContactContainerStyle id="contact">
+    <ContactContainerStyle id="contact" backgroundColor={backgroundColor}>
       <Flex direction="column" align="center">
         <ListRow
           contents={
@@ -39,8 +43,8 @@ const Contact = () => {
   );
 };
 
-const ContactContainerStyle = styled.section`
-  background-color: ${colors.blue500};
+const ContactContainerStyle = styled.section<{ backgroundColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
 `;
 

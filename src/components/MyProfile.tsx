@@ -7,9 +7,13 @@ import scrollIntoView from "@utils/scrollIntoView";
 import { SCROLL_ID } from "@constants/index";
 import { colors } from "@src/styles/colorPalette";
 
-const MyProfile = () => {
+const MyProfile = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   return (
-    <MyProfileContainerStyle id="my-profile">
+    <MyProfileContainerStyle id="my-profile" backgroundColor={backgroundColor}>
       <Flex direction="column" align="center">
         <ListRow
           contents={
@@ -49,8 +53,8 @@ const MyProfile = () => {
   );
 };
 
-const MyProfileContainerStyle = styled.section`
-  background-color: ${colors.blue500};
+const MyProfileContainerStyle = styled.section<{ backgroundColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
 `;
 

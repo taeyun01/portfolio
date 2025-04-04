@@ -5,9 +5,16 @@ import styled from "@emotion/styled";
 import Badge from "@src/components/shared/Badge";
 import { colors } from "@src/styles/colorPalette";
 
-const MyProjects = () => {
+const MyProjects = ({
+  backgroundColor = colors.white,
+}: {
+  backgroundColor?: string;
+}) => {
   return (
-    <MyProjectsContainerStyle id="my-projects">
+    <MyProjectsContainerStyle
+      id="my-projects"
+      backgroundColor={backgroundColor}
+    >
       <Flex direction="column" align="center" gap={14}>
         <Text bold color="white">
           My Projects
@@ -147,8 +154,8 @@ const projectList = [
   },
 ];
 
-const MyProjectsContainerStyle = styled.section`
-  background-color: ${colors.blue500};
+const MyProjectsContainerStyle = styled.section<{ backgroundColor: string }>`
+  background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
 `;
 

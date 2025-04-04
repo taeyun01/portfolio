@@ -10,7 +10,7 @@ import { colors } from "@src/styles/colorPalette";
 
 function App() {
   return (
-    <>
+    <div>
       <Navbar backgroundColor={colors.black} />
 
       <MyProfile backgroundColor={colors.black} />
@@ -26,7 +26,7 @@ function App() {
       <Spacing size={8} backgroundColor="white" />
 
       <Contact backgroundColor={colors.black} />
-    </>
+    </div>
   );
 }
 

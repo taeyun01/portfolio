@@ -3,7 +3,7 @@ const scrollIntoView = (id: string) => {
   const navbar = document.querySelector("nav"); // navbar 요소 선택
   const offset = navbar ? navbar.offsetHeight : 0; // navbar 높이 계산
 
-  console.log(element);
+  // console.log(element);
 
   if (element) {
     const elementPosition =

@@ -28,6 +28,9 @@ const ListRow = ({
   return (
     //* ListRow는 UI를 넣을 구멍만 뚫어주고 사용처에서 각각 요소들을 조합해서 사용하는 방법
     <Flex
+      style={{
+        border: "1px solid red",
+      }}
       as={as}
       css={[listRowContainerStyles, style]}
       onClick={onClick}

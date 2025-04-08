@@ -83,6 +83,8 @@ const Skills = [
 const MySkillsContainerStyle = styled.section<{ backgroundColor: string }>`
   background-color: ${({ backgroundColor }) => backgroundColor};
   padding: 80px 0;
+  width: 100%;
+  height: 100vh;
 `;
 
 export default MySkills;

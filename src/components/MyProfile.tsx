@@ -43,19 +43,23 @@ const MyProfile = ({
           </div>
           <div
             style={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
               // border: "2px solid yellow",
-              width: "70%",
+              width: "52%",
+              height: "100%",
             }}
           >
             <ListRow
               left={<ProfileImage>🧑🏻‍💻</ProfileImage>}
               contents={
                 <Flex direction="column">
-                  <Text typography="t2" color="white">
+                  <Text typography="t3" color="white">
                     안녕하세요.
                   </Text>
-                  <Text typography="t2" bold color="white">
-                    프론트엔드 개발자 짱구입니다
+                  <Text typography="t3" bold color="white">
+                    프론트엔드 개발자 유태윤입니다.
                   </Text>
                 </Flex>
               }
@@ -67,13 +71,19 @@ const MyProfile = ({
               contents={
                 <Flex direction="column" gap={12}>
                   <div>
-                    <Badge as="span" label="010-1234-5678" typography="t5" />
+                    <Badge
+                      as="span"
+                      label="010-1234-5678"
+                      typography="t5"
+                      borderColor={colors.white600}
+                    />
                   </div>
                   <div>
                     <Badge
                       as="span"
                       label="test1234@naver.com"
                       typography="t5"
+                      borderColor={colors.white600}
                     />
                   </div>
                 </Flex>

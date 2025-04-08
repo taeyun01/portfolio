@@ -16,7 +16,7 @@ function App() {
       <MyProfile backgroundColor={colors.black} />
       <Spacing size={8} backgroundColor="black" />
 
-      <MySkills backgroundColor={colors.black} />
+      <MySkills backgroundColor={colors.gray100} />
       <Spacing size={8} backgroundColor="black" />
 
       <MyProjects backgroundColor={colors.black} />

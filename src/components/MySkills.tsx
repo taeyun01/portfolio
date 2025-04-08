@@ -1,23 +1,66 @@
 import Flex from "@components/shared/Flex";
 import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
+import Spacing from "@src/components/shared/Spacing";
 import { colors } from "@src/styles/colorPalette";
+import getViewPortHeight from "@src/utils/viewPort";
+import { useEffect, useState } from "react";
 
 const MySkills = ({
   backgroundColor = colors.white,
 }: {
   backgroundColor?: string;
 }) => {
+  const [viewPortHeight, setViewPortHeight] = useState(0);
+
+  useEffect(() => {
+    // const viewPort = getViewPortHeight();
+    // setViewPortHeight(viewPort);
+
+    // 뷰포트 높이 실시간 업데이트(창 높이가 변경될 때마다)
+    const updateViewPortHeight = () => {
+      const viewPort = getViewPortHeight();
+      setViewPortHeight(viewPort);
+    };
+
+    updateViewPortHeight(); // 초기 높이 설정
+
+    window.addEventListener("resize", updateViewPortHeight);
+
+    return () => {
+      window.removeEventListener("resize", updateViewPortHeight);
+    };
+  }, []);
+
   return (
-    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
+    <MySkillsContainerStyle
+      id="my-skills"
+      backgroundColor={backgroundColor}
+      viewPortHeight={viewPortHeight}
+    >
       <Flex direction="column" align="center" gap={14}>
-        <Text bold color="white">
-          My Skills
-        </Text>
         <Flex justify="center" gap={14} wrap="wrap" css={{ width: "100%" }}>
           {Skills.map((skill) => (
-            <Flex key={skill.name} direction="column" align="center" gap={14}>
+            <Flex
+              key={skill.name}
+              direction="column"
+              align="center"
+              style={{
+                borderRadius: "10px",
+                padding: "14px 24px",
+                backgroundColor: colors.white,
+              }}
+            >
               <img src={skill.icon} alt={skill.name} width={80} height={50} />
+              <Spacing size={16} backgroundColor="white" />
+              <Spacing
+                size={0.9}
+                backgroundColor="black"
+                style={{
+                  width: "115%",
+                }}
+              />
+              <Spacing size={4} backgroundColor="white" />
               <Text typography="t7" bold color="gray800">
                 {skill.name}
               </Text>
@@ -32,7 +75,7 @@ const MySkills = ({
 const Skills = [
   {
     name: "Next.js",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
   },
   {
     name: "React",
@@ -56,11 +99,15 @@ const Skills = [
   },
   {
     name: "Tailwind CSS",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original-wordmark.svg",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
   },
   {
     name: "Emotion",
     icon: "https://jjunohj.github.io/assets/images/Emotion.png",
+  },
+  {
+    name: "Vercel",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg",
   },
   {
     name: "Git",
@@ -80,11 +127,17 @@ const Skills = [
   },
 ];
 
-const MySkillsContainerStyle = styled.section<{ backgroundColor: string }>`
+const MySkillsContainerStyle = styled.section<{
+  backgroundColor: string;
+  viewPortHeight: number;
+}>`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  padding: 80px 0;
   width: 100%;
-  height: 100vh;
+  height: ${({ viewPortHeight }) => viewPortHeight}px;
+  border: 4px solid red;
 `;
 
 export default MySkills;

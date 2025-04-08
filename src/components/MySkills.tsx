@@ -38,7 +38,12 @@ const MySkills = ({
       backgroundColor={backgroundColor}
       viewPortHeight={viewPortHeight}
     >
-      <Flex direction="column" align="center" gap={14}>
+      <Flex
+        direction="column"
+        align="center"
+        gap={14}
+        style={{ padding: "0 24px" }}
+      >
         <Flex justify="center" gap={14} wrap="wrap" css={{ width: "100%" }}>
           {Skills.map((skill) => (
             <Flex
@@ -137,7 +142,6 @@ const MySkillsContainerStyle = styled.section<{
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
   height: ${({ viewPortHeight }) => viewPortHeight}px;
-  border: 4px solid red;
 `;
 
 export default MySkills;

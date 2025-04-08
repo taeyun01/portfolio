@@ -52,7 +52,7 @@ const MySkills = ({
               align="center"
               style={{
                 borderRadius: "10px",
-                padding: "14px 24px",
+                padding: "18px 24px",
                 backgroundColor: colors.white,
               }}
             >
@@ -109,6 +109,10 @@ const Skills = [
   {
     name: "Emotion",
     icon: "https://jjunohj.github.io/assets/images/Emotion.png",
+  },
+  {
+    name: "Styled-components",
+    icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLHvye41PpJGLJGk8cm7mdAPOWrfQOasyewx5G3MAkg-D0bJhtkvPLRjgY8CYN2JgkR_Q&usqp=CAU",
   },
   {
     name: "Vercel",

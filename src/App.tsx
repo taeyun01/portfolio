@@ -1,6 +1,5 @@
 import "./App.css";
 import AboutMe from "@components/AboutMe";
-import Contact from "@components/Contact";
 import MyProfile from "@components/MyProfile";
 import MyProjects from "@components/MyProjects";
 import MySkills from "@components/MySkills";
@@ -14,18 +13,16 @@ function App() {
       <Navbar backgroundColor={colors.black} />
 
       <MyProfile backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="black" />
+      <Spacing size={4} backgroundColor="black" />
 
       <MySkills backgroundColor={colors.gray100} />
-      <Spacing size={8} backgroundColor="black" />
+      <Spacing size={4} backgroundColor="black" />
 
       <MyProjects backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="black" />
+      <Spacing size={4} backgroundColor="black" />
 
       <AboutMe backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="black" />
-
-      <Contact backgroundColor={colors.black} />
+      <Spacing size={4} backgroundColor="black" />
     </div>
   );
 }

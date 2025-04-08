@@ -101,7 +101,7 @@ const projectList = [
         backgroundColor: colors.blue980,
       },
       {
-        label: "styled-components",
+        label: "Styled-components",
         backgroundColor: colors.red,
       },
       {

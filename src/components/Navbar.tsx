@@ -104,7 +104,7 @@ const NavbarContainer = styled.nav<{ backgroundColor: string }>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 24px;
+  padding: 20px 24px;
   background-color: ${({ backgroundColor }) => backgroundColor};
   position: fixed;
   top: 0;
@@ -120,7 +120,7 @@ const navTitleStyle = css`
 const navItemWrapperStyle = css`
   display: none;
   list-style: none;
-  gap: 25px;
+  gap: 35px;
 
   @media (min-width: 520px) {
     display: flex;
@@ -157,10 +157,10 @@ const NavbarItem = [
     id: SCROLL_ID.ABOUT_ME,
     name: "About",
   },
-  {
-    id: SCROLL_ID.CONTACT,
-    name: "Contact",
-  },
+  // {
+  //   id: SCROLL_ID.CONTACT,
+  //   name: "Contact",
+  // },
 ];
 
 export default Navbar;

@@ -7,6 +7,7 @@ interface BadgeProps {
   backgroundColor?: string;
   borderColor?: string;
   as?: "div" | "span";
+  typography?: "t7" | "t6" | "t5" | "t4" | "t3" | "t2" | "t1";
 }
 
 const Badge = ({
@@ -14,6 +15,7 @@ const Badge = ({
   backgroundColor = colors.black,
   borderColor = colors.white,
   as = "div",
+  typography = "t7",
 }: BadgeProps) => {
   return (
     <Container
@@ -21,7 +23,7 @@ const Badge = ({
       backgroundColor={backgroundColor}
       borderColor={borderColor}
     >
-      <Text bold typography="t7" color="white">
+      <Text bold typography={typography} color="white">
         {label}
       </Text>
     </Container>

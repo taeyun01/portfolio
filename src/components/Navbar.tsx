@@ -79,6 +79,7 @@ const mobileNavStyle = css`
 `;
 
 const mobileNavItemStyle = css`
+  text-align: center;
   cursor: pointer;
   padding: 8px 24px;
   width: 100%;
@@ -92,7 +93,7 @@ const mobileMenuStyle = (navHeight: number, isOpen: boolean) => css`
   top: ${navHeight}px;
   left: 0;
   width: 100%;
-  background-color: ${colors.blue};
+  background-color: ${colors.black};
   display: flex;
   flex-direction: column;
   ${mobileNavStyle}
@@ -105,8 +106,10 @@ const NavbarContainer = styled.nav<{ backgroundColor: string }>`
   align-items: center;
   padding: 16px 24px;
   background-color: ${({ backgroundColor }) => backgroundColor};
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
 `;
 

@@ -14,16 +14,16 @@ function App() {
       <Navbar backgroundColor={colors.black} />
 
       <MyProfile backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="white" />
+      <Spacing size={8} backgroundColor="black" />
 
       <MySkills backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="white" />
+      <Spacing size={8} backgroundColor="black" />
 
       <MyProjects backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="white" />
+      <Spacing size={8} backgroundColor="black" />
 
       <AboutMe backgroundColor={colors.black} />
-      <Spacing size={8} backgroundColor="white" />
+      <Spacing size={8} backgroundColor="black" />
 
       <Contact backgroundColor={colors.black} />
     </div>

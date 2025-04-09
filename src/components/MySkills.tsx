@@ -3,41 +3,14 @@ import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
 import Spacing from "@src/components/shared/Spacing";
 import { colors } from "@src/styles/colorPalette";
-import getViewPortHeight from "@src/utils/viewPort";
-import { useEffect, useState } from "react";
 
 const MySkills = ({
   backgroundColor = colors.white,
 }: {
   backgroundColor?: string;
 }) => {
-  const [viewPortHeight, setViewPortHeight] = useState(0);
-
-  useEffect(() => {
-    // const viewPort = getViewPortHeight();
-    // setViewPortHeight(viewPort);
-
-    // 뷰포트 높이 실시간 업데이트(창 높이가 변경될 때마다)
-    const updateViewPortHeight = () => {
-      const viewPort = getViewPortHeight();
-      setViewPortHeight(viewPort);
-    };
-
-    updateViewPortHeight(); // 초기 높이 설정
-
-    window.addEventListener("resize", updateViewPortHeight);
-
-    return () => {
-      window.removeEventListener("resize", updateViewPortHeight);
-    };
-  }, []);
-
   return (
-    <MySkillsContainerStyle
-      id="my-skills"
-      backgroundColor={backgroundColor}
-      viewPortHeight={viewPortHeight}
-    >
+    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
       <Flex
         direction="column"
         align="center"
@@ -66,7 +39,17 @@ const MySkills = ({
                 }}
               />
               <Spacing size={4} backgroundColor="white" />
-              <Text typography="t7" bold color="gray800">
+              <Text
+                typography="t7"
+                bold
+                color="gray800"
+                style={{
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                  maxWidth: "75px", // 필요에 따라 최대 너비 조정
+                }}
+              >
                 {skill.name}
               </Text>
             </Flex>
@@ -138,14 +121,14 @@ const Skills = [
 
 const MySkillsContainerStyle = styled.section<{
   backgroundColor: string;
-  viewPortHeight: number;
 }>`
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
-  height: ${({ viewPortHeight }) => viewPortHeight}px;
+
+  padding: 120px 24px;
 `;
 
 export default MySkills;

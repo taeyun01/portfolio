@@ -3,7 +3,6 @@ import Text from "@components/shared/Text";
 import { css } from "@emotion/react";
 import styled from "@emotion/styled";
 import Badge from "@src/components/shared/Badge";
-import useViewPortHeight from "@src/components/shared/useViewPortHeight";
 import { colors } from "@src/styles/colorPalette";
 
 const MyProjects = ({
@@ -11,15 +10,10 @@ const MyProjects = ({
 }: {
   backgroundColor?: string;
 }) => {
-  const viewPortHeight = useViewPortHeight();
-
-  console.log("viewPortHeight", viewPortHeight);
-
   return (
     <MyProjectsContainerStyle
       id="my-projects"
       backgroundColor={backgroundColor}
-      viewPortHeight={viewPortHeight}
     >
       <Flex direction="column" align="center" gap={14}>
         <Flex as="ul" justify="center" gap={12} wrap="wrap">
@@ -34,7 +28,6 @@ const MyProjects = ({
                 <img
                   src={project.image}
                   alt={project.title}
-                  width="100%"
                   css={projectItemStyle}
                 />
 
@@ -42,7 +35,7 @@ const MyProjects = ({
                   <Text typography="t5" bold>
                     {project.title}
                   </Text>
-                  <Text typography="t6" color="gray">
+                  <Text typography="t7" color="gray500">
                     {project.description}
                   </Text>
                   <Flex gap={3} wrap="wrap" css={{ width: "100%" }}>
@@ -69,7 +62,7 @@ const projectList = [
   {
     title: "Booking",
     image:
-      "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
+      "https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_31-64.png",
     link: "https://booking-seven-chi.vercel.app",
     description: "일본 호텔 예약 서비스",
     badge: [
@@ -91,7 +84,7 @@ const projectList = [
   {
     title: "블러드폴리오",
     image:
-      "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
+      "https://velog.velcdn.com/images/taeyun01/post/19fbdd9a-187b-4548-8c7d-435a33db7949/image.png",
     link: "https://bloodfolio.vercel.app",
     description: "포트폴리오 공유 서비스",
     badge: [
@@ -113,9 +106,9 @@ const projectList = [
   {
     title: "워크커넥트",
     image:
-      "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
+      "https://velog.velcdn.com/images/taeyun01/post/89758ae8-cf25-4ddf-b08e-c2ae7bcabc28/image.png",
     link: "https://work-connect-plum.vercel.app",
-    description: "워크스페이스 커뮤니케이션 서비스",
+    description: "통합 워크스페이스 서비스 (협업 툴)",
     badge: [
       { label: "Next.js", backgroundColor: colors.black },
       {
@@ -127,8 +120,8 @@ const projectList = [
         backgroundColor: colors.tailwind,
       },
       {
-        label: "Firebase",
-        backgroundColor: colors.orange,
+        label: "Supabase",
+        backgroundColor: colors.teal,
       },
     ],
   },
@@ -158,19 +151,15 @@ const projectList = [
 
 const MyProjectsContainerStyle = styled.section<{
   backgroundColor: string;
-  viewPortHeight: number;
 }>`
-  //TODO: 창 너비를 완전 줄였을 때 카드 요소들이 현재 뷰포트 높이를 벗어나는 현상 해결하기
-
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
-  height: ${({ viewPortHeight }) => viewPortHeight}px;
-
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 
-  padding: 0 24px;
+  padding: 120px 24px;
 `;
 
 const cardStyle = css`
@@ -185,6 +174,12 @@ const projectItemStyle = css`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
+  object-fit: none; // fill, cover, contain, none, scale-down
+
+  border-bottom: 1px solid ${colors.gray300};
+
+  width: 100%;
+  height: 180px;
 `;
 
 export default MyProjects;

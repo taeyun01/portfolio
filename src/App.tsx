@@ -21,8 +21,7 @@ function App() {
       <MyProjects backgroundColor={colors.black} />
       <Spacing size={4} backgroundColor="black" />
 
-      <AboutMe backgroundColor={colors.black} />
-      <Spacing size={4} backgroundColor="black" />
+      <AboutMe backgroundColor={colors.gray100} />
     </div>
   );
 }

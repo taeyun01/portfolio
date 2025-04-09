@@ -1,7 +1,6 @@
 import Flex from "@components/shared/Flex";
 import Text from "@components/shared/Text";
 import styled from "@emotion/styled";
-import useViewPortHeight from "@src/components/shared/useViewPortHeight";
 import { colors } from "@src/styles/colorPalette";
 
 const AboutMe = ({
@@ -9,16 +8,35 @@ const AboutMe = ({
 }: {
   backgroundColor?: string;
 }) => {
-  const viewPortHeight = useViewPortHeight();
-
   return (
-    <AboutMeContainerStyle
-      id="about-me"
-      backgroundColor={backgroundColor}
-      viewPortHeight={viewPortHeight}
-    >
-      <Flex direction="column" align="center">
-        <Text typography="t6">내 소개</Text>
+    <AboutMeContainerStyle id="about-me" backgroundColor={backgroundColor}>
+      <Flex
+        direction="column"
+        style={{
+          backgroundColor: colors.white,
+          padding: "40px",
+          borderRadius: "16px",
+          margin: "0 24px",
+        }}
+        gap={16}
+      >
+        <Text typography="t4" color="navy" bold>
+          끈기만은 자부할 수 있습니다.
+        </Text>
+        <Text typography="t5" color="gray500">
+          비전공자로서, 개발 업무를 경험해본 시간은 상대적으로 적을 수 있습니다.
+        </Text>
+        <Text typography="t5" color="gray500">
+          하지만 신입 개발자로서의 열정만큼은 업무를 성실히 진행함에 있어 절대
+          모자라지 않습니다.
+        </Text>
+        <Text typography="t5" color="gray500">
+          마음 먹은건 우직하게 밀고 나가는 끈기 있는 개발자 입니다.
+        </Text>
+        <Text typography="t5" color="gray500">
+          나중 된 자가 먼저 되는 날까지, 변하지 않는 성실함과 끈기로 앞으로
+          나아가겠습니다.
+        </Text>
       </Flex>
     </AboutMeContainerStyle>
   );
@@ -26,14 +44,14 @@ const AboutMe = ({
 
 const AboutMeContainerStyle = styled.section<{
   backgroundColor: string;
-  viewPortHeight: number;
 }>`
-  background-color: ${({ backgroundColor }) => backgroundColor};
-  // border: 4px solid red;
-  width: 100%;
-  height: ${({ viewPortHeight }) => viewPortHeight}px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  background-color: ${colors.gray100};
+  background-color: ${({ backgroundColor }) => backgroundColor};
+  width: 100%;
+  padding: 120px 24px;
 `;
 
 export default AboutMe;

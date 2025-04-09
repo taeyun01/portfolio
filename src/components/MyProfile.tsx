@@ -26,10 +26,15 @@ const MyProfile = ({
       >
         <Flex
           gap={0}
-          style={{
+          css={{
             // border: "3px solid green",
             width: "100%",
             alignItems: "center",
+            // flexDirection: "column",
+
+            "@media (max-width: 768px)": {
+              flexDirection: "column",
+            },
           }}
         >
           <div
@@ -42,17 +47,41 @@ const MyProfile = ({
             <PortFolioSVG />
           </div>
           <div
-            style={{
+            className="profile-container"
+            css={{
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
               // border: "2px solid yellow",
-              width: "52%",
               height: "100%",
+              width: "52%",
+
+              "@media (max-width: 768px)": {
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+                width: "100%",
+                "& span": {
+                  fontSize: "14px",
+                },
+                "& .profile-image": {
+                  fontSize: "40px",
+                },
+              },
             }}
           >
             <ListRow
-              left={<ProfileImage>🧑🏻‍💻</ProfileImage>}
+              left={
+                <ProfileImage
+                  css={{
+                    "@media (max-width: 768px)": {
+                      fontSize: "50px",
+                    },
+                  }}
+                >
+                  🧑🏻‍💻
+                </ProfileImage>
+              }
               contents={
                 <Flex direction="column">
                   <Text typography="t3" color="white">
@@ -93,7 +122,14 @@ const MyProfile = ({
         </Flex>
 
         <div
-          style={{ position: "absolute", bottom: "50px", paddingTop: "150px" }}
+          css={{
+            position: "absolute",
+            bottom: "50px",
+            paddingTop: "150px",
+            "@media (max-width: 768px)": {
+              paddingTop: "100px",
+            },
+          }}
         >
           <ArrowDownIcon onClick={() => scrollIntoView(SCROLL_ID.SKILLS)} />
         </div>
@@ -114,11 +150,11 @@ const MyProfileContainerStyle = styled.section<{
 `;
 
 const ProfileImage = styled.div`
-  width: 80px;
-  height: 80px;
+  // width: 80px;
+  // height: 80px;
   font-size: 85px;
-  border-radius: 50%;
-  object-fit: cover;
+  // border-radius: 50%;
+  // object-fit: cover;
 `;
 
 const PortFolioSVG = () => {

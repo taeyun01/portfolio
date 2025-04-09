@@ -29,12 +29,23 @@ const MySkills = ({
                 backgroundColor: colors.white,
               }}
             >
-              <img src={skill.icon} alt={skill.name} width={80} height={50} />
+              <img
+                src={skill.icon}
+                alt={skill.name}
+                width={80}
+                height={50}
+                css={{
+                  "@media (max-width: 480px)": {
+                    width: "70px",
+                    height: "30px",
+                  },
+                }}
+              />
               <Spacing size={16} backgroundColor="white" />
               <Spacing
                 size={0.9}
                 backgroundColor="black"
-                style={{
+                css={{
                   width: "115%",
                 }}
               />

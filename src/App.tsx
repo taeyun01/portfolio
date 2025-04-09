@@ -15,11 +15,11 @@ function App() {
       <MyProfile backgroundColor={colors.black} />
       <Spacing size={4} backgroundColor="black" />
 
-      <MySkills backgroundColor={colors.gray100} />
-      <Spacing size={4} backgroundColor="black" />
+      <MyProjects backgroundColor={colors.gray100} />
+      <Spacing size={4} backgroundColor="gray100" />
 
-      <MyProjects backgroundColor={colors.black} />
-      <Spacing size={4} backgroundColor="black" />
+      <MySkills backgroundColor={colors.gray100} />
+      <Spacing size={4} backgroundColor="gray100" />
 
       <AboutMe backgroundColor={colors.gray100} />
     </div>

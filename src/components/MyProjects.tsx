@@ -14,13 +14,32 @@ const MyProjects = ({
     <MyProjectsContainerStyle
       id="my-projects"
       backgroundColor={backgroundColor}
-      css={{
-        "@media (max-width: 480px)": {
-          padding: "60px 12px",
-        },
-      }}
     >
-      <Flex direction="column" align="center" gap={14}>
+      <Flex direction="column" align="center" gap={2}>
+        <Text
+          typography="t3"
+          color="black"
+          bold
+          css={{
+            "@media (max-width: 480px)": {
+              fontSize: "20px",
+            },
+          }}
+        >
+          Projects
+        </Text>
+        <Text
+          typography="t5"
+          color="gray700"
+          css={{
+            marginBottom: "12px",
+            "@media (max-width: 480px)": {
+              fontSize: "14px",
+            },
+          }}
+        >
+          협업 또는 개인 프로젝트들 입니다.
+        </Text>
         <Flex as="ul" justify="center" gap={12} wrap="wrap">
           {projectList.map((project) => (
             <a
@@ -164,7 +183,7 @@ const MyProjectsContainerStyle = styled.section<{
   justify-content: center;
   align-items: center;
 
-  padding: 120px 24px;
+  padding: 40px 24px;
 `;
 
 const cardStyle = css`

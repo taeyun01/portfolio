@@ -9,15 +9,31 @@ const AboutMe = ({
   backgroundColor?: string;
 }) => {
   return (
-    <AboutMeContainerStyle
-      id="about-me"
-      backgroundColor={backgroundColor}
-      css={{
-        "@media (max-width: 480px)": {
-          padding: "60px 12px",
-        },
-      }}
-    >
+    <AboutMeContainerStyle id="about-me" backgroundColor={backgroundColor}>
+      <Text
+        typography="t3"
+        color="black"
+        bold
+        css={{
+          "@media (max-width: 480px)": {
+            fontSize: "20px",
+          },
+        }}
+      >
+        Strong Points
+      </Text>
+      <Text
+        typography="t5"
+        color="gray700"
+        css={{
+          marginBottom: "12px",
+          "@media (max-width: 480px)": {
+            fontSize: "14px",
+          },
+        }}
+      >
+        저의 장점을 소개합니다.
+      </Text>
       <Flex
         direction="column"
         css={{
@@ -25,10 +41,11 @@ const AboutMe = ({
           padding: "40px",
           borderRadius: "16px",
           margin: "0 24px",
+          width: "100%",
           "@media (max-width: 480px)": {
             padding: "20px 20px",
             "& span": {
-              fontSize: "12px",
+              fontSize: "14px",
             },
           },
         }}
@@ -60,12 +77,13 @@ const AboutMeContainerStyle = styled.section<{
   backgroundColor: string;
 }>`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
-  padding: 120px 24px;
+  padding: 40px 24px;
 `;
 
 export default AboutMe;

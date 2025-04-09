@@ -146,12 +146,12 @@ const NavbarItem = [
     name: "Home",
   },
   {
-    id: SCROLL_ID.SKILLS,
-    name: "Skills",
-  },
-  {
     id: SCROLL_ID.PROJECTS,
     name: "Projects",
+  },
+  {
+    id: SCROLL_ID.SKILLS,
+    name: "Skills",
   },
   {
     id: SCROLL_ID.ABOUT_ME,

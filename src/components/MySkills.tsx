@@ -10,21 +10,37 @@ const MySkills = ({
   backgroundColor?: string;
 }) => {
   return (
-    <MySkillsContainerStyle
-      id="my-skills"
-      backgroundColor={backgroundColor}
-      css={{
-        "@media (max-width: 480px)": {
-          padding: "60px 12px",
-        },
-      }}
-    >
+    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
       <Flex
         direction="column"
         align="center"
-        gap={14}
+        gap={2}
         style={{ padding: "0 24px" }}
       >
+        <Text
+          typography="t3"
+          color="black"
+          bold
+          css={{
+            "@media (max-width: 480px)": {
+              fontSize: "20px",
+            },
+          }}
+        >
+          Tech Stack
+        </Text>
+        <Text
+          typography="t5"
+          color="gray700"
+          css={{
+            marginBottom: "12px",
+            "@media (max-width: 480px)": {
+              fontSize: "14px",
+            },
+          }}
+        >
+          실제 프로젝트에 적용시켜 본 기술 스택들입니다.
+        </Text>
         <Flex justify="center" gap={14} wrap="wrap" css={{ width: "100%" }}>
           {Skills.map((skill) => (
             <Flex
@@ -147,7 +163,7 @@ const MySkillsContainerStyle = styled.section<{
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
 
-  padding: 120px 24px;
+  padding: 40px 24px;
 `;
 
 export default MySkills;

@@ -179,7 +179,7 @@ const MyProfile = ({
             },
           }}
         >
-          <ArrowDownIcon onClick={() => scrollIntoView(SCROLL_ID.SKILLS)} />
+          <ArrowDownIcon onClick={() => scrollIntoView(SCROLL_ID.PROJECTS)} />
         </div>
       </Flex>
     </MyProfileContainerStyle>

@@ -14,6 +14,11 @@ const MyProjects = ({
     <MyProjectsContainerStyle
       id="my-projects"
       backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          padding: "60px 12px",
+        },
+      }}
     >
       <Flex direction="column" align="center" gap={14}>
         <Flex as="ul" justify="center" gap={12} wrap="wrap">
@@ -84,7 +89,7 @@ const projectList = [
   {
     title: "블러드폴리오",
     image:
-      "https://velog.velcdn.com/images/taeyun01/post/19fbdd9a-187b-4548-8c7d-435a33db7949/image.png",
+      "https://velog.velcdn.com/images/taeyun01/post/a5ee9e62-5ed1-4f73-8f89-43d461859e71/image.png",
     link: "https://bloodfolio.vercel.app",
     description: "포트폴리오 공유 서비스",
     badge: [

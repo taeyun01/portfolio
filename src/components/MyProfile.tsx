@@ -14,7 +14,18 @@ const MyProfile = ({
   backgroundColor?: string;
 }) => {
   return (
-    <MyProfileContainerStyle id="my-profile" backgroundColor={backgroundColor}>
+    <MyProfileContainerStyle
+      id="my-profile"
+      backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        },
+      }}
+    >
       <Flex
         direction="column"
         justify="center"
@@ -25,7 +36,6 @@ const MyProfile = ({
         }}
       >
         <Flex
-          gap={0}
           css={{
             // border: "3px solid green",
             width: "100%",
@@ -38,10 +48,13 @@ const MyProfile = ({
           }}
         >
           <div
-            style={{
+            css={{
               width: "100%",
               padding: "8px 24px",
-              // border: "2px solid yellow",
+              "@media (max-width: 480px)": {
+                marginTop: "-80px",
+                width: "100%",
+              },
             }}
           >
             <PortFolioSVG />
@@ -75,23 +88,41 @@ const MyProfile = ({
           >
             <ListRow
               left={
-                <ProfileImage
-                  css={{
-                    "@media (max-width: 768px)": {
-                      fontSize: "50px",
-                    },
-                  }}
+                <div
+                  style={
+                    {
+                      // border: "1px solid red",
+                    }
+                  }
                 >
-                  🧑🏻‍💻
-                </ProfileImage>
+                  <ProfileImage
+                    src="https://velog.velcdn.com/images/taeyun01/post/335358db-5de6-4f46-abc4-ab2f157eaa59/image.png"
+                    alt="Profile"
+                    css={{
+                      "@media (max-width: 768px)": {
+                        width: "80px",
+                      },
+                    }}
+                  />
+                </div>
               }
               contents={
-                <Flex direction="column">
+                <Flex
+                  direction="column"
+                  style={
+                    {
+                      // border: "1px solid blue",
+                    }
+                  }
+                >
                   <Text typography="t3" color="white">
                     안녕하세요.
                   </Text>
                   <Text typography="t3" bold color="white">
-                    프론트엔드 개발자 유태윤입니다.
+                    프론트엔드 개발자
+                  </Text>
+                  <Text typography="t3" color="white">
+                    유태윤입니다.
                   </Text>
                 </Flex>
               }
@@ -166,10 +197,9 @@ const MyProfileContainerStyle = styled.section<{
   height: 100vh;
 `;
 
-const ProfileImage = styled.div`
-  // width: 80px;
-  // height: 80px;
-  font-size: 85px;
+const ProfileImage = styled.img`
+  width: 120px;
+  // font-size: 85px;
   // border-radius: 50%;
   // object-fit: cover;
 `;

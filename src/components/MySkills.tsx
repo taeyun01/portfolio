@@ -10,7 +10,15 @@ const MySkills = ({
   backgroundColor?: string;
 }) => {
   return (
-    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
+    <MySkillsContainerStyle
+      id="my-skills"
+      backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          padding: "60px 12px",
+        },
+      }}
+    >
       <Flex
         direction="column"
         align="center"

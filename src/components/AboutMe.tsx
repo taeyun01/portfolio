@@ -9,14 +9,28 @@ const AboutMe = ({
   backgroundColor?: string;
 }) => {
   return (
-    <AboutMeContainerStyle id="about-me" backgroundColor={backgroundColor}>
+    <AboutMeContainerStyle
+      id="about-me"
+      backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          padding: "60px 12px",
+        },
+      }}
+    >
       <Flex
         direction="column"
-        style={{
+        css={{
           backgroundColor: colors.white,
           padding: "40px",
           borderRadius: "16px",
           margin: "0 24px",
+          "@media (max-width: 480px)": {
+            padding: "20px 20px",
+            "& span": {
+              fontSize: "12px",
+            },
+          },
         }}
         gap={16}
       >

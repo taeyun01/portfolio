@@ -113,7 +113,7 @@ const MyProfile = ({
                   <div>
                     <Badge
                       as="span"
-                      label="010-1234-5678"
+                      label="010-2830-9126"
                       typography="t5"
                       borderColor={colors.white600}
                     />
@@ -121,7 +121,7 @@ const MyProfile = ({
                   <div>
                     <Badge
                       as="span"
-                      label="test1234@naver.com"
+                      label="ew20@naver.com"
                       typography="t5"
                       borderColor={colors.white600}
                     />

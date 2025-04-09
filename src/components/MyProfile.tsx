@@ -52,7 +52,6 @@ const MyProfile = ({
               display: "flex",
               flexDirection: "column",
               justifyContent: "center",
-              // border: "2px solid yellow",
               height: "100%",
               width: "52%",
 
@@ -67,6 +66,10 @@ const MyProfile = ({
                 "& .profile-image": {
                   fontSize: "40px",
                 },
+              },
+
+              "@media (max-width: 480px)": {
+                flexDirection: "column",
               },
             }}
           >
@@ -98,7 +101,15 @@ const MyProfile = ({
 
             <ListRow
               contents={
-                <Flex direction="column" gap={12}>
+                <Flex
+                  direction="column"
+                  gap={12}
+                  css={{
+                    "@media (max-width: 480px)": {
+                      flexDirection: "row",
+                    },
+                  }}
+                >
                   <div>
                     <Badge
                       as="span"
@@ -128,6 +139,12 @@ const MyProfile = ({
             paddingTop: "150px",
             "@media (max-width: 768px)": {
               paddingTop: "100px",
+            },
+            "@media (max-width: 480px)": {
+              "& svg": {
+                width: "25px",
+                height: "25px",
+              },
             },
           }}
         >

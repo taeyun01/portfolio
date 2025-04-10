@@ -159,16 +159,22 @@ const MyProfile = ({
                     </div>
                   </Flex>
                   <div>
-                    <i
-                      className="devicon-github-original"
-                      css={{
-                        color: "white",
-                        fontSize: "50px",
-                        "@media (max-width: 480px)": {
-                          fontSize: "45px",
-                        },
-                      }}
-                    ></i>
+                    <a
+                      href="https://github.com/taeyun01"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i
+                        className="devicon-github-original"
+                        css={{
+                          color: "white",
+                          fontSize: "50px",
+                          "@media (max-width: 480px)": {
+                            fontSize: "45px",
+                          },
+                        }}
+                      ></i>
+                    </a>
                   </div>
                 </Flex>
               }

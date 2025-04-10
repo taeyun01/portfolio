@@ -14,6 +14,12 @@ export default css`
     --alert-zindex: 11;
   }
 
+  @font-face {
+    font-family: "Pretendard-Regular";
+    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+      format("woff");
+  }
+
   html,
   body,
   div,
@@ -154,15 +160,8 @@ export default css`
     text-decoration: inherit;
   }
 
-  @font-face {
-    font-family: "Pretendard-Regular";
-    src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
-      format("woff");
-    font-weight: 400;
-    font-style: normal;
-  }
-
   body {
     font-family: "Pretendard-Regular";
+    font-weight: 400;
   }
 `;

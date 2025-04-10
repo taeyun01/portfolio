@@ -42,7 +42,7 @@ const MyProfile = ({
             alignItems: "center",
             // flexDirection: "column",
 
-            "@media (max-width: 768px)": {
+            "@media (max-width: 1000px)": {
               flexDirection: "column",
             },
           }}
@@ -68,17 +68,11 @@ const MyProfile = ({
               height: "100%",
               width: "52%",
 
-              "@media (max-width: 768px)": {
+              "@media (max-width: 1000px)": {
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
                 width: "100%",
-                "& span": {
-                  fontSize: "14px",
-                },
-                "& .profile-image": {
-                  fontSize: "40px",
-                },
               },
 
               "@media (max-width: 480px)": {
@@ -88,13 +82,7 @@ const MyProfile = ({
           >
             <ListRow
               left={
-                <div
-                  style={
-                    {
-                      // border: "1px solid red",
-                    }
-                  }
-                >
+                <div>
                   <ProfileImage
                     src="https://velog.velcdn.com/images/taeyun01/post/335358db-5de6-4f46-abc4-ab2f157eaa59/image.png"
                     alt="Profile"
@@ -109,11 +97,13 @@ const MyProfile = ({
               contents={
                 <Flex
                   direction="column"
-                  style={
-                    {
-                      // border: "1px solid blue",
-                    }
-                  }
+                  css={{
+                    "@media (max-width: 768px)": {
+                      "& span": {
+                        fontSize: "16px",
+                      },
+                    },
+                  }}
                 >
                   <Text typography="t3" color="white">
                     안녕하세요.
@@ -136,8 +126,16 @@ const MyProfile = ({
                   direction="column"
                   gap={12}
                   css={{
+                    "@media (max-width: 768px)": {
+                      "& span": {
+                        fontSize: "16px",
+                      },
+                    },
                     "@media (max-width: 480px)": {
                       flexDirection: "row",
+                      "& span": {
+                        fontSize: "14px",
+                      },
                     },
                   }}
                 >

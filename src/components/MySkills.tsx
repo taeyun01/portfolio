@@ -10,14 +10,22 @@ const MySkills = ({
   backgroundColor?: string;
 }) => {
   return (
-    <MySkillsContainerStyle id="my-skills" backgroundColor={backgroundColor}>
+    <MySkillsContainerStyle
+      id="my-skills"
+      backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          padding: "50px 24px",
+        },
+      }}
+    >
       <Flex
         direction="column"
         align="center"
         gap={2}
         style={{ padding: "0 24px" }}
       >
-        <Text
+        {/* <Text
           typography="t3"
           color="black"
           bold
@@ -28,12 +36,13 @@ const MySkills = ({
           }}
         >
           Tech Stack
-        </Text>
+        </Text> */}
         <Text
           typography="t5"
-          color="gray700"
+          color="black"
+          bold
           css={{
-            marginBottom: "12px",
+            marginBottom: "18px",
             "@media (max-width: 480px)": {
               fontSize: "14px",
             },
@@ -163,7 +172,7 @@ const MySkillsContainerStyle = styled.section<{
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
 
-  padding: 40px 24px;
+  padding: 80px 24px;
 `;
 
 export default MySkills;

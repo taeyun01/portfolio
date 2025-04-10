@@ -9,8 +9,16 @@ const AboutMe = ({
   backgroundColor?: string;
 }) => {
   return (
-    <AboutMeContainerStyle id="about-me" backgroundColor={backgroundColor}>
-      <Text
+    <AboutMeContainerStyle
+      id="about-me"
+      backgroundColor={backgroundColor}
+      css={{
+        "@media (max-width: 480px)": {
+          padding: "50px 24px",
+        },
+      }}
+    >
+      {/* <Text
         typography="t3"
         color="black"
         bold
@@ -21,12 +29,13 @@ const AboutMe = ({
         }}
       >
         Strong Points
-      </Text>
+      </Text> */}
       <Text
         typography="t5"
-        color="gray700"
+        color="white"
+        bold
         css={{
-          marginBottom: "12px",
+          marginBottom: "18px",
           "@media (max-width: 480px)": {
             fontSize: "14px",
           },
@@ -49,9 +58,16 @@ const AboutMe = ({
             },
           },
         }}
-        gap={16}
+        gap={8}
       >
-        <Text typography="t4" color="navy" bold>
+        <Text
+          typography="t4"
+          color="darkBlue"
+          bold
+          style={{
+            marginBottom: "8px",
+          }}
+        >
           끈기만은 자부할 수 있습니다.
         </Text>
         <Text typography="t5" color="gray500">
@@ -83,7 +99,7 @@ const AboutMeContainerStyle = styled.section<{
 
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
-  padding: 40px 24px;
+  padding: 80px 24px;
 `;
 
 export default AboutMe;

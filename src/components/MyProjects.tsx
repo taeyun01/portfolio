@@ -46,7 +46,7 @@ const MyProjects = ({
         >
           협업 또는 개인 프로젝트들 입니다.
         </Text>
-        <Flex as="ul" justify="center" gap={12} wrap="wrap">
+        <Flex as="ul" justify="center" gap={18} wrap="wrap">
           {projectList.map((project) => (
             <a
               key={project.title}
@@ -193,11 +193,16 @@ const MyProjectsContainerStyle = styled.section<{
 `;
 
 const cardStyle = css`
-  width: 300px;
+  width: 270px;
   height: 100%;
   background-color: white;
   border-radius: 10px;
   overflow: hidden;
+
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+  }
 `;
 
 const projectItemStyle = css`

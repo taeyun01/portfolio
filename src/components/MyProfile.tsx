@@ -123,7 +123,8 @@ const MyProfile = ({
             <ListRow
               contents={
                 <Flex
-                  direction="column"
+                  direction="row"
+                  justify="center"
                   gap={12}
                   css={{
                     "@media (max-width: 768px)": {
@@ -139,21 +140,35 @@ const MyProfile = ({
                     },
                   }}
                 >
+                  <Flex direction="column" gap={4}>
+                    <div>
+                      <Badge
+                        as="span"
+                        label="010-2830-9126"
+                        typography="t5"
+                        borderColor={colors.white600}
+                      />
+                    </div>
+                    <div>
+                      <Badge
+                        as="span"
+                        label="ew20@naver.com"
+                        typography="t5"
+                        borderColor={colors.white600}
+                      />
+                    </div>
+                  </Flex>
                   <div>
-                    <Badge
-                      as="span"
-                      label="010-2830-9126"
-                      typography="t5"
-                      borderColor={colors.white600}
-                    />
-                  </div>
-                  <div>
-                    <Badge
-                      as="span"
-                      label="ew20@naver.com"
-                      typography="t5"
-                      borderColor={colors.white600}
-                    />
+                    <i
+                      className="devicon-github-original"
+                      css={{
+                        color: "white",
+                        fontSize: "50px",
+                        "@media (max-width: 480px)": {
+                          fontSize: "45px",
+                        },
+                      }}
+                    ></i>
                   </div>
                 </Flex>
               }

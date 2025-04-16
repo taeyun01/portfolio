@@ -30,7 +30,7 @@ const AboutMe = ({
       >
         Strong Points
       </Text> */}
-      <Text
+      {/* <Text
         typography="t5"
         color="white"
         bold
@@ -42,7 +42,7 @@ const AboutMe = ({
         }}
       >
         저의 장점을 소개합니다.
-      </Text>
+      </Text> */}
       <Flex
         direction="column"
         css={{

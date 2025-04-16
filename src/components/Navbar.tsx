@@ -155,7 +155,7 @@ const NavbarItem = [
   },
   {
     id: SCROLL_ID.ABOUT_ME,
-    name: "About",
+    name: "Strong Points",
   },
   // {
   //   id: SCROLL_ID.CONTACT,

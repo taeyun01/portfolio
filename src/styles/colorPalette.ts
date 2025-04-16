@@ -33,8 +33,16 @@ export const colorPalette = css`
     --orange500: rgba(255, 159, 10, 0.5);
     --orange980: rgba(255, 159, 10, 0.98);
     --red: rgba(253, 46, 105, 1);
-    --red100: rgba(253, 46, 105, 0.1);
     --red50: rgba(253, 46, 105, 0.05);
+    --red100: rgba(253, 46, 105, 0.1);
+    --red200: rgba(253, 46, 105, 0.2);
+    --red300: rgba(253, 46, 105, 0.3);
+    --red400: rgba(253, 46, 105, 0.4);
+    --red500: rgba(253, 46, 105, 0.5);
+    --red600: rgba(253, 46, 105, 0.6);
+    --red700: rgba(253, 46, 105, 0.7);
+    --red800: rgba(253, 46, 105, 0.8);
+    --red900: rgba(253, 46, 105, 0.9);
     --purple: rgba(151, 95, 254, 1);
     --purple100: rgba(151, 95, 254, 0.1);
     --white: rgba(255, 255, 255, 1);
@@ -82,6 +90,14 @@ export const colors = {
   red: "var(--red)",
   red50: "var(--red50)",
   red100: "var(--red100)",
+  red200: "var(--red200)",
+  red300: "var(--red300)",
+  red400: "var(--red400)",
+  red500: "var(--red500)",
+  red600: "var(--red600)",
+  red700: "var(--red700)",
+  red800: "var(--red800)",
+  red900: "var(--red900)",
   purple: "var(--purple)",
   purple100: "var(--purple100)",
   white: "var(--white)",

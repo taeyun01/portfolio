@@ -23,7 +23,7 @@ const MySkills = ({
         direction="column"
         align="center"
         gap={2}
-        style={{ padding: "0 24px" }}
+        // style={{ padding: "0 24px" }}
       >
         {/* <Text
           typography="t3"
@@ -126,6 +126,14 @@ const Skills = [
     icon: "https://velog.velcdn.com/images/taeyun01/post/c04a3cd0-6edb-4096-a3bd-35f98f385f21/image.png",
   },
   {
+    name: "Redux",
+    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redux/redux-original.svg",
+  },
+  {
+    name: "Zustand",
+    icon: "https://blog.kakaocdn.net/dn/bmRo9Z/btsHznSxxu8/hi3wOnUqtTx0A6yDzfNi7K/img.png",
+  },
+  {
     name: "Node.js",
     icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original-wordmark.svg",
   },
@@ -172,7 +180,7 @@ const MySkillsContainerStyle = styled.section<{
   background-color: ${({ backgroundColor }) => backgroundColor};
   width: 100%;
 
-  padding: 80px 24px;
+  padding: 80px 8px;
 `;
 
 export default MySkills;

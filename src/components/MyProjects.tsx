@@ -102,8 +102,12 @@ const projectList = [
         backgroundColor: colors.blue980,
       },
       {
+        label: "Recoil",
+        backgroundColor: colors.navy,
+      },
+      {
         label: "Emotion",
-        backgroundColor: colors.red,
+        backgroundColor: colors.red800,
       },
       {
         label: "Firebase",
@@ -122,6 +126,10 @@ const projectList = [
       {
         label: "TypeScript",
         backgroundColor: colors.blue980,
+      },
+      {
+        label: "Redux Toolkit",
+        backgroundColor: colors.purple,
       },
       {
         label: "Styled-components",
@@ -146,6 +154,10 @@ const projectList = [
         backgroundColor: colors.blue980,
       },
       {
+        label: "Zustand",
+        backgroundColor: colors.gray700,
+      },
+      {
         label: "Tailwind CSS",
         backgroundColor: colors.tailwind,
       },
@@ -155,28 +167,28 @@ const projectList = [
       },
     ],
   },
-  {
-    title: "자산관리",
-    image:
-      "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
-    link: "https://next13-project-mu.vercel.app/",
-    description: "내 자산을 관리하는 서비스",
-    badge: [
-      { label: "Next.js", backgroundColor: colors.black },
-      {
-        label: "TypeScript",
-        backgroundColor: colors.blue980,
-      },
-      {
-        label: "Emotion",
-        backgroundColor: colors.red,
-      },
-      {
-        label: "Firebase",
-        backgroundColor: colors.orange,
-      },
-    ],
-  },
+  // {
+  //   title: "자산관리",
+  //   image:
+  //     "https://sojoong.joins.com/wp-content/uploads/sites/4/2024/12/01.jpg",
+  //   link: "https://next13-project-mu.vercel.app/",
+  //   description: "내 자산을 관리하는 서비스",
+  //   badge: [
+  //     { label: "Next.js", backgroundColor: colors.black },
+  //     {
+  //       label: "TypeScript",
+  //       backgroundColor: colors.blue980,
+  //     },
+  //     {
+  //       label: "Emotion",
+  //       backgroundColor: colors.red,
+  //     },
+  //     {
+  //       label: "Firebase",
+  //       backgroundColor: colors.orange,
+  //     },
+  //   ],
+  // },
 ];
 
 const MyProjectsContainerStyle = styled.section<{
